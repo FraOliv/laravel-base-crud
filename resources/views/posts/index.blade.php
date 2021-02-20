@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-<h1>Post Home</h1>
+Post Home
     
 @endsection
 @section('main_content')
 
-<a href="" class="btn btn-dark">
+<a href="{{route('posts.create')}}" class="btn btn-dark">
     Create a new Post
 </a>
 <table class="table">
