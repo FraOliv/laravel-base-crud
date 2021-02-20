@@ -32,9 +32,13 @@ Post Home
         <td>{{$value->title}}</td>
         <td>{{$value->body}}</td>
         <td>
-            <a href="">View</a>
-            <a href="">Edit</a>
-            <a href="">Delete</a>
+            <a href="{{route('posts.show', ['post'=>$value->id])}}">View</a>
+            <a href="{{route('posts.edit', ['post'=>$value->id])}}">Edit</a>
+            <form action="{{route('posts.destroy', ['post'=>$value->id])}}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit"> Delete</button>
+            </form>
         </td>
     </tr>
     @empty
